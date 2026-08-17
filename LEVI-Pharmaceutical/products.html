@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="assets/images/favicon.png" rel="icon" sizes="192x192" type="image/png"/><link as="image" href="assets/images/LEVI-logo-launch.png" rel="preload"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Explore medicines, medical equipment, laboratory supplies, consumables and diagnostic products from LEVI Pharmaceutical Plc." name="description"/>
+<title>Products | LEVI Pharmaceutical Plc</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<style>
+        .filter-tabs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 40px; }
+        .filter-tabs button { padding: 8px 18px; border-radius: 30px; background: var(--light); color: var(--text); font-weight: 600; font-size: 12px; transition: var(--transition); border: 0; cursor: pointer; }
+        .filter-tabs button.active, .filter-tabs button:hover { background: var(--primary); color: white; }
+        .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        @media (max-width: 1024px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .product-grid { grid-template-columns: 1fr; } }
+        .product-item { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); }
+        .product-item:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+        .product-item img { width: 100%; height: 200px; object-fit: cover; }
+        .product-item .info { padding: 22px 20px 26px; }
+        .product-item .info h3 { color: var(--dark); font-family: "Poppins", sans-serif; font-size: 17px; margin-bottom: 6px; }
+        .product-item .info p { font-size: 12px; color: var(--text); margin-bottom: 12px; }
+        .product-item .info .tag { display: inline-block; background: var(--primary-light); color: var(--primary); font-size: 10px; font-weight: 700; padding: 2px 12px; border-radius: 20px; }
+        .product-item .info .btn-small { display: inline-block; margin-top: 8px; color: var(--primary); font-weight: 700; font-size: 12px; }
+        .product-item .info .btn-small i { transition: margin 0.2s; }
+        .product-item .info .btn-small:hover i { margin-left: 6px; }
+        .page-hero { position: relative; padding: 120px 0 80px; background: linear-gradient(110deg, var(--primary-dark), var(--primary)); color: var(--white); overflow: hidden; }
+        .page-hero .container { position: relative; z-index: 2; }
+        .page-hero h1 { font-family: "Poppins", sans-serif; font-size: clamp(36px, 4.5vw, 54px); line-height: 1.15; margin-bottom: 12px; }
+        .page-hero h1 span { color: #7be3a6; }
+        .page-hero p { max-width: 600px; color: rgba(255, 255, 255, 0.78); font-size: 15px; }
+        .page-hero .breadcrumb { display: flex; gap: 8px; font-size: 12px; color: rgba(255, 255, 255, 0.55); margin-top: 18px; }
+        .page-hero .breadcrumb a { color: #8aefb1; }
+        .page-hero .breadcrumb a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<!-- PRELOADER -->
+<div id="preloader"><div class="loader"><div class="loader-icon"><i class="fa-solid fa-plus"></i></div><h3>LEVI Pharmaceutical</h3><div class="loader-line"></div></div></div>
+<!-- TOP BAR -->
+<div class="top-bar"><div class="container top-bar-container"><div class="top-left"><span><i class="fa-solid fa-location-dot"></i> Addis Ababa, Ethiopia</span><span><i class="fa-solid fa-phone"></i> +251 11 123 4567</span><span><i class="fa-solid fa-envelope"></i> info@levipharma.com</span></div><div class="top-right"><a aria-label="Facebook" href="https://www.facebook.com/" rel="noopener" target="_blank"><i class="fa-brands fa-facebook-f"></i></a><a aria-label="LinkedIn" href="https://www.linkedin.com/" rel="noopener" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a><a aria-label="Telegram" href="https://t.me/" rel="noopener" target="_blank"><i class="fa-brands fa-telegram"></i></a></div></div></div>
+<!-- HEADER -->
+<header class="main-header" id="mainHeader"><div class="container nav-container"><a class="logo" href="index.html"><img alt="LEVI Pharmaceutical Plc" class="logo-img" src="assets/images/LEVI-logo-launch.png"/></a><nav class="main-nav" id="mainNav"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li class="dropdown"><a class="active" href="products.html">Products <i class="fa-solid fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="products.html#medicines">Medicines</a></li><li><a href="products.html#medical-equipment">Medical Equipment</a></li><li><a href="products.html#laboratory">Laboratory Products</a></li><li><a href="products.html#consumables">Medical Consumables</a></li><li><a href="products.html#diagnostics">Diagnostic Products</a></li></ul></li><li><a href="services.html">Services</a></li><li><a href="about.html#partners">Partners</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></nav><div class="nav-actions"><button aria-label="Search" class="search-btn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button><a class="nav-quote-btn" href="contact.html#quote">Request a Quote</a><button aria-label="Open menu" class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button></div></div></header>
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay"><button class="search-close" id="searchClose"><i class="fa-solid fa-xmark"></i></button><div class="search-container"><p>Search LEVI Pharmaceutical</p><div class="search-box"><input id="searchInput" placeholder="Search medicines, equipment, services..." type="text"/><button><i class="fa-solid fa-magnifying-glass"></i></button></div></div></div>
+<!-- PAGE HERO -->
+<section class="page-hero"><div class="container"><h1>Our <span>Products</span></h1><p>Explore our comprehensive range of healthcare solutions – from medicines to medical equipment.</p><div class="breadcrumb"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:8px;"></i> <span>Products</span></div></div></section>
+<!-- PRODUCT SECTION -->
+<section class="section-padding" style="background:var(--light);"><div class="container"><div class="filter-tabs"><button class="active" data-filter="all">All</button><button data-filter="medicines">Medicines</button><button data-filter="equipment">Medical Equipment</button><button data-filter="laboratory">Laboratory</button><button data-filter="consumables">Consumables</button><button data-filter="diagnostics">Diagnostics</button></div><div class="category-anchors" aria-hidden="true"><span id="medicines"></span><span id="medical-equipment"></span><span id="laboratory"></span><span id="consumables"></span><span id="diagnostics"></span></div><div class="product-grid" id="productGrid"></div></div></section>
+<!-- CTA -->
+<section class="cta-section"><div class="cta-background"></div><div class="container cta-container"><div class="cta-content"><span class="cta-tag">Need Healthcare Products?</span><h2>Let's Build a Healthier <span>Future Together</span></h2><p>Contact our team for product information, quotations, partnership opportunities, or healthcare supply requirements.</p></div><div class="cta-buttons"><a class="btn btn-white" href="contact.html#quote">Request a Quote <i class="fa-solid fa-arrow-right"></i></a><a class="btn btn-transparent" href="contact.html">Contact Us</a></div></div></section>
+<!-- NEWSLETTER -->
+<section class="newsletter-section"><div class="container newsletter-container"><div class="newsletter-content"><div class="newsletter-icon"><i class="fa-regular fa-envelope"></i></div><div><h3>Stay Updated</h3><p>Subscribe for company news and healthcare updates.</p></div></div><form class="newsletter-form" id="newsletterForm"><input placeholder="Enter your email address" required="" type="email"/><button type="submit">Subscribe <i class="fa-solid fa-arrow-right"></i></button></form></div></section>
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-company"><a class="footer-logo" href="index.html"><img alt="LEVI Pharmaceutical Plc" class="footer-logo-img" src="assets/images/LEVI-logo-launch.png"/></a><p>An Ethiopian pharmaceutical company specializing in the importation and distribution of pharmaceuticals, medical equipment, laboratory products, and healthcare supplies.</p><div class="footer-social"><a aria-label="Facebook" href="https://www.facebook.com/" rel="noopener" target="_blank"><i class="fa-brands fa-facebook-f"></i></a><a aria-label="LinkedIn" href="https://www.linkedin.com/" rel="noopener" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a><a aria-label="Telegram" href="https://t.me/" rel="noopener" target="_blank"><i class="fa-brands fa-telegram"></i></a><a aria-label="Instagram" href="https://www.instagram.com/" rel="noopener" target="_blank"><i class="fa-brands fa-instagram"></i></a></div></div><div class="footer-column"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="services.html">Services</a></li><li><a href="news.html">News &amp; Events</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-column"><h4>Products</h4><ul><li><a href="products.html#medicines">Medicines</a></li><li><a href="products.html#medical-equipment">Medical Equipment</a></li><li><a href="products.html#laboratory">Laboratory Products</a></li><li><a href="products.html#diagnostics">Diagnostics</a></li><li><a href="products.html#consumables">Medical Consumables</a></li></ul></div><div class="footer-column footer-contact"><h4>Contact</h4><p><i class="fa-solid fa-location-dot"></i> Bole Sub City, Addis Ababa, Ethiopia</p><p><i class="fa-solid fa-phone"></i> +251 11 123 4567</p><p><i class="fa-solid fa-envelope"></i> info@levipharma.com</p><p><i class="fa-solid fa-clock"></i> Mon – Fri: 8:30 AM – 5:30 PM</p></div></div><div class="footer-bottom"><p>© <span id="currentYear"></span> LEVI Pharmaceutical Plc. All Rights Reserved.</p><div><a href="contact.html#privacy-note">Privacy Policy</a><a href="contact.html#terms-note">Terms &amp; Conditions</a></div></div></div></footer>
+<!-- WHATSAPP & BACK TO TOP -->
+<a aria-label="Chat on WhatsApp" class="whatsapp-btn" href="https://wa.me/251911234567" rel="noopener" target="_blank"><i class="fa-brands fa-whatsapp"></i><span>Chat with us</span></a>
+<button aria-label="Back to top" class="back-to-top" id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+<script src="assets/js/main.js"></script>
+<script>
+        const products = [
+            { category: 'medicines', name: 'Antibiotics', desc: 'Broad-spectrum antibiotics for various infections.', img: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=400&q=80' },
+            { category: 'medicines', name: 'Vitamins & Supplements', desc: 'Essential vitamins and mineral supplements.', img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80' },
+            { category: 'equipment', name: 'Patient Monitors', desc: 'Multi-parameter vital signs monitors.', img: 'https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=400&q=80' },
+            { category: 'equipment', name: 'Surgical Instruments', desc: 'High-quality stainless steel surgical tools.', img: 'https://images.unsplash.com/photo-1582750420983-db535c70c700?auto=format&fit=crop&w=400&q=80' },
+            { category: 'laboratory', name: 'Microscopes', desc: 'Binocular and trinocular microscopes for labs.', img: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=400&q=80' },
+            { category: 'laboratory', name: 'Reagents & Kits', desc: 'Diagnostic reagents and ELISA kits.', img: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=400&q=80' },
+            { category: 'consumables', name: 'Gloves & PPE', desc: 'Disposable gloves, masks, gowns, and more.', img: 'https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&w=400&q=80' },
+            { category: 'consumables', name: 'Syringes & Needles', desc: 'Sterile syringes and needles in various sizes.', img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80' },
+            { category: 'diagnostics', name: 'Rapid Test Kits', desc: 'Quick tests for malaria, HIV, pregnancy, etc.', img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=400&q=80' },
+            { category: 'diagnostics', name: 'Blood Glucose Meters', desc: 'Accurate glucometers with test strips.', img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=400&q=80' },
+        ];
+        const grid = document.getElementById('productGrid');
+        const filterBtns = document.querySelectorAll('.filter-tabs button');
+        function renderProducts(filter = 'all') {
+            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+            grid.innerHTML = filtered.map(p => `<div class="product-item"><img src="${p.img}" loading="lazy" decoding="async"><div class="info"><span class="tag">${p.category}</span><h3>${p.name}</h3><p>${p.desc}</p><a href="contact.html#quote" class="btn-small">Inquire <i class="fa-solid fa-arrow-right"></i></a></div></div>`).join('');
+        }
+        filterBtns.forEach(btn => { btn.addEventListener('click', function() { filterBtns.forEach(b => b.classList.remove('active')); this.classList.add('active'); renderProducts(this.dataset.filter); }); });
+        const searchParam = new URLSearchParams(window.location.search).get('search') || '';
+        const hashToFilter = {
+            medicines: 'medicines',
+            'medical-equipment': 'equipment',
+            laboratory: 'laboratory',
+            consumables: 'consumables',
+            diagnostics: 'diagnostics'
+        };
+        const hashFilter = hashToFilter[(window.location.hash || '').replace('#','')];
+        if (!searchParam && hashFilter) {
+            filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === hashFilter));
+            renderProducts(hashFilter);
+        } else if (searchParam) {
+            const q = searchParam.toLowerCase();
+            const matches = products.filter(p => [p.name, p.category, p.desc].join(' ').toLowerCase().includes(q));
+            grid.innerHTML = matches.length ? matches.map(p => `<div class=\"product-item\"><img src=\"${p.img}\" alt=\"${p.name}\" loading=\"lazy\" decoding=\"async\" /><div class=\"info\"><span class=\"tag\">${p.category}</span><h3>${p.name}</h3><p>${p.desc}</p><a href=\"contact.html#quote\" class=\"btn-small\">Inquire <i class=\"fa-solid fa-arrow-right\"></i></a></div></div>`).join('') : `<div class=\"empty-state\"><i class=\"fa-solid fa-magnifying-glass\"></i><h3>No exact product match</h3><p>Contact LEVI Pharmaceutical for help finding the healthcare product you need.</p></div>`;
+        } else {
+            renderProducts('all');
+        }
+    </script>
+</body>
+</html>
