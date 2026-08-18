@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="assets/images/favicon.png" rel="icon" sizes="192x192" type="image/png"/><link as="image" href="assets/images/LEVI-logo-launch.png" rel="preload"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Learn about LEVI Pharmaceutical Plc, an Ethiopian importer and distributor of pharmaceuticals, medical equipment and healthcare products." name="description"/>
+<meta content="LEVI Pharmaceutical, pharmaceuticals Ethiopia, medical equipment Ethiopia, medicine importer Ethiopia" name="keywords"/>
+<meta content="LEVI Pharmaceutical Plc" name="author"/>
+<title>LEVI Pharmaceutical Plc | About Us</title>
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<!-- Main CSS -->
+<link href="assets/css/style.css" rel="stylesheet"/>
+<style>
+        /* ---------- additional page-specific tweaks ---------- */
+        .page-hero {
+            position: relative;
+            padding: 120px 0 80px;
+            background: linear-gradient(110deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            overflow: hidden;
+        }
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .page-hero h1 {
+            font-family: "Poppins", sans-serif;
+            font-size: clamp(36px, 4.5vw, 54px);
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        .page-hero h1 span {
+            color: #7be3a6;
+        }
+        .page-hero p {
+            max-width: 600px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 15px;
+        }
+        .page-hero .breadcrumb {
+            display: flex;
+            gap: 8px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 18px;
+        }
+        .page-hero .breadcrumb a {
+            color: #8aefb1;
+        }
+        .page-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .about-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-grid-2 .about-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        .team-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+        }
+        .team-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+        }
+        .team-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .team-card .team-info {
+            padding: 20px 16px 24px;
+        }
+        .team-card .team-info h4 {
+            color: var(--dark);
+            font-family: "Poppins", sans-serif;
+            font-size: 16px;
+        }
+        .team-card .team-info span {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .service-card {
+            background: var(--white);
+            padding: 35px 28px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+            border-bottom-color: var(--secondary);
+        }
+        .service-card .service-icon {
+            width: 56px;
+            height: 56px;
+            display: grid;
+            place-items: center;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 12px;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+        .service-card h3 {
+            color: var(--dark);
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .service-card p {
+            font-size: 12px;
+            color: var(--text);
+        }
+
+        .news-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .news-featured {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .news-featured img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        .news-featured .news-body {
+            padding: 28px;
+        }
+        .news-featured .news-body .meta {
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+        .news-featured .news-body h3 {
+            color: var(--dark);
+            font-family: "Poppins", sans-serif;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .news-featured .news-body p {
+            font-size: 13px;
+        }
+
+        .contact-form-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .contact-form-box .form-group {
+            margin-bottom: 18px;
+        }
+        .contact-form-box label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+        .contact-form-box input,
+        .contact-form-box textarea,
+        .contact-form-box select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            font-size: 13px;
+            transition: var(--transition);
+            outline: 0;
+        }
+        .contact-form-box input:focus,
+        .contact-form-box textarea:focus,
+        .contact-form-box select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(7, 89, 133, 0.12);
+        }
+        .contact-form-box textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+        .contact-form-box .btn {
+            width: 100%;
+        }
+
+        .careers-list .job-item {
+            background: var(--white);
+            padding: 22px 28px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            transition: var(--transition);
+            margin-bottom: 16px;
+        }
+        .careers-list .job-item:hover {
+            box-shadow: var(--shadow);
+            transform: translateX(4px);
+        }
+        .careers-list .job-item h4 {
+            color: var(--dark);
+            font-family: "Poppins", sans-serif;
+            font-size: 17px;
+        }
+        .careers-list .job-item .job-meta {
+            font-size: 12px;
+            color: var(--muted);
+        }
+        .careers-list .job-item .btn-small {
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        .careers-list .job-item .btn-small:hover {
+            background: var(--secondary);
+        }
+
+        @media (max-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .about-grid-2 {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .news-grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-box {
+                padding: 24px;
+            }
+            .page-hero {
+                padding: 100px 0 60px;
+            }
+        }
+        @media (max-width: 480px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .careers-list .job-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- =========================================================
+    PRELOADER
+    ========================================================= -->
+<div id="preloader">
+<div class="loader">
+<div class="loader-icon"><i class="fa-solid fa-plus"></i></div>
+<h3>LEVI Pharmaceutical</h3>
+<div class="loader-line"></div>
+</div>
+</div>
+<!-- =========================================================
+    TOP BAR
+    ========================================================= -->
+<div class="top-bar">
+<div class="container top-bar-container">
+<div class="top-left">
+<span><i class="fa-solid fa-location-dot"></i> Addis Ababa, Ethiopia</span>
+<span><i class="fa-solid fa-phone"></i> +251 11 123 4567</span>
+<span><i class="fa-solid fa-envelope"></i> info@levipharma.com</span>
+</div>
+<div class="top-right">
+<a aria-label="Facebook" href="https://www.facebook.com/" rel="noopener" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/" rel="noopener" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+<a aria-label="Telegram" href="https://t.me/" rel="noopener" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+</div>
+</div>
+</div>
+<!-- =========================================================
+    HEADER
+    ========================================================= -->
+<header class="main-header" id="mainHeader">
+<div class="container nav-container">
+<a class="logo" href="index.html">
+<img alt="LEVI Pharmaceutical Plc" class="logo-img" src="assets/images/LEVI-logo-launch.png"/>
+</a>
+<nav class="main-nav" id="mainNav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a class="active" href="about.html">About Us</a></li>
+<li class="dropdown">
+<a href="products.html">Products <i class="fa-solid fa-chevron-down"></i></a>
+<ul class="dropdown-menu">
+<li><a href="products.html#medicines">Medicines</a></li>
+<li><a href="products.html#medical-equipment">Medical Equipment</a></li>
+<li><a href="products.html#laboratory">Laboratory Products</a></li>
+<li><a href="products.html#consumables">Medical Consumables</a></li>
+<li><a href="products.html#diagnostics">Diagnostic Products</a></li>
+</ul>
+</li>
+<li><a href="services.html">Services</a></li>
+<li><a href="about.html#partners">Partners</a></li>
+<li><a href="news.html">News</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<div class="nav-actions">
+<button aria-label="Search" class="search-btn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+<a class="nav-quote-btn" href="contact.html#quote">Request a Quote</a>
+<button aria-label="Open menu" class="mobile-menu-btn" id="mobileMenuBtn">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</header>
+<!-- =========================================================
+    SEARCH OVERLAY
+    ========================================================= -->
+<div class="search-overlay" id="searchOverlay">
+<button class="search-close" id="searchClose"><i class="fa-solid fa-xmark"></i></button>
+<div class="search-container">
+<p>Search LEVI Pharmaceutical</p>
+<div class="search-box">
+<input id="searchInput" placeholder="Search medicines, equipment, services..." type="text"/>
+<button><i class="fa-solid fa-magnifying-glass"></i></button>
+</div>
+</div>
+</div>
+<!-- =========================================================
+    PAGE HERO
+    ========================================================= -->
+<section class="page-hero">
+<div class="container">
+<h1>About <span>LEVI Pharmaceutical</span></h1>
+<p>Learn about our mission, values, and commitment to improving healthcare in Ethiopia.</p>
+<div class="breadcrumb">
+<a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:8px;"></i>
+<span>About Us</span>
+</div>
+</div>
+</section>
+<!-- =========================================================
+    ABOUT INTRO
+    ========================================================= -->
+<section class="section-padding">
+<div class="container">
+<div class="about-grid-2">
+<div class="about-image reveal">
+<img decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"/>
+</div>
+<div class="reveal">
+<span class="section-tag"><i class="fa-solid fa-building"></i> Who We Are</span>
+<h2 style="font-family:'Poppins',sans-serif;color:var(--dark);font-size:clamp(28px,3.5vw,40px);line-height:1.2;margin-bottom:16px;">Your Trusted <span style="color:var(--primary);">Healthcare Partner</span></h2>
+<p style="font-size:14px;margin-bottom:14px;">LEVI Pharmaceutical Plc is an Ethiopian company focused on the importation, marketing, and distribution of pharmaceutical and healthcare products. We aim to connect healthcare providers with reliable products sourced from reputable manufacturers worldwide.</p>
+<p style="font-size:14px;margin-bottom:14px;">Our portfolio includes medicines, medical equipment, laboratory products, diagnostics, and healthcare consumables. We are committed to professionalism, quality, reliability, and customer satisfaction while supporting the development of Ethiopia's healthcare sector.</p>
+<p style="font-size:14px;">With a dedicated team and strong partnerships, we work to ensure that healthcare institutions, pharmacies, clinics, NGOs, and healthcare professionals have access to the products they need.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================
+    MISSION / VISION (reused from home but more detailed)
+    ========================================================= -->
+<section class="section-padding" style="background:var(--light);">
+<div class="container">
+<div class="section-heading centered reveal">
+<span class="section-tag"><i class="fa-solid fa-compass"></i> Our Direction</span>
+<h2>Driven By Purpose, <span>Guided By Values</span></h2>
+</div>
+<div class="mission-grid">
+<div class="mission-card reveal">
+<div class="mission-number">01</div>
+<div class="mission-icon"><i class="fa-solid fa-bullseye"></i></div>
+<h3>Our Mission</h3>
+<p>To contribute to better healthcare outcomes by providing quality pharmaceutical, medical, and healthcare products through reliable supply, professional service, and strong partnerships.</p>
+</div>
+<div class="mission-card featured reveal">
+<div class="mission-number">02</div>
+<div class="mission-icon"><i class="fa-solid fa-eye"></i></div>
+<h3>Our Vision</h3>
+<p>To become a trusted and leading pharmaceutical and healthcare distribution company in Ethiopia, recognized for quality, reliability, innovation, and excellence.</p>
+</div>
+<div class="mission-card reveal">
+<div class="mission-number">03</div>
+<div class="mission-icon"><i class="fa-solid fa-gem"></i></div>
+<h3>Our Values</h3>
+<p>Integrity, quality, accountability, customer focus, teamwork, professionalism, and continuous improvement guide everything we do.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================
+    TEAM
+    ========================================================= -->
+<section class="section-padding">
+<div class="container">
+<div class="section-heading centered reveal">
+<span class="section-tag"><i class="fa-solid fa-user-group"></i> Leadership</span>
+<h2>Meet Our <span>Team</span></h2>
+<p>Our team brings together decades of experience in pharmaceutical distribution, healthcare, and business management.</p>
+</div>
+<div class="team-grid">
+<div class="team-card reveal">
+<img decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
+<div class="team-info">
+<h4>Dr. Yohannes Mekonnen</h4>
+<span>Chief Executive Officer</span>
+</div>
+</div>
+<div class="team-card reveal">
+<img decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
+<div class="team-info">
+<h4>Selamawit Haile</h4>
+<span>Chief Operating Officer</span>
+</div>
+</div>
+<div class="team-card reveal">
+<img decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
+<div class="team-info">
+<h4>Abebe Tadesse</h4>
+<span>Chief Financial Officer</span>
+</div>
+</div>
+<div class="team-card reveal">
+<img decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
+<div class="team-info">
+<h4>Meron Assefa</h4>
+<span>Supply Chain Director</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================
+    PARTNERS
+    ========================================================= -->
+<section class="section-padding" id="partners" style="background:var(--light);">
+<div class="container">
+<div class="section-heading centered reveal">
+<span class="section-tag"><i class="fa-solid fa-handshake"></i> Our Partners</span>
+<h2>Building Strong <span>Healthcare Partnerships</span></h2>
+<p>We partner with reputable manufacturers and suppliers to bring quality healthcare products to Ethiopia.</p>
+</div>
+<div class="partners-grid reveal">
+<div class="partner-logo"><i class="fa-solid fa-plus"></i><span>MEDICA</span></div>
+<div class="partner-logo"><i class="fa-solid fa-flask"></i><span>PHARMA+</span></div>
+<div class="partner-logo"><i class="fa-solid fa-heart-pulse"></i><span>HEALTHCARE</span></div>
+<div class="partner-logo"><i class="fa-solid fa-microscope"></i><span>LABTECH</span></div>
+<div class="partner-logo"><i class="fa-solid fa-stethoscope"></i><span>MEDTECH</span></div>
+<div class="partner-logo"><i class="fa-solid fa-hospital"></i><span>CLINICARE</span></div>
+</div>
+</div>
+</section>
+<!-- =========================================================
+    CALL TO ACTION
+    ========================================================= -->
+<section class="cta-section">
+<div class="cta-background"></div>
+<div class="container cta-container reveal">
+<div class="cta-content">
+<span class="cta-tag">Need Healthcare Products?</span>
+<h2>Let's Build a Healthier <span>Future Together</span></h2>
+<p>Contact our team for product information, quotations, partnership opportunities, or healthcare supply requirements.</p>
+</div>
+<div class="cta-buttons">
+<a class="btn btn-white" href="contact.html#quote">Request a Quote <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn btn-transparent" href="contact.html">Contact Us</a>
+</div>
+</div>
+</section>
+<!-- =========================================================
+    NEWSLETTER
+    ========================================================= -->
+<section class="newsletter-section">
+<div class="container newsletter-container">
+<div class="newsletter-content">
+<div class="newsletter-icon"><i class="fa-regular fa-envelope"></i></div>
+<div>
+<h3>Stay Updated</h3>
+<p>Subscribe for company news and healthcare updates.</p>
+</div>
+</div>
+<form class="newsletter-form" id="newsletterForm">
+<input placeholder="Enter your email address" required="" type="email"/>
+<button type="submit">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+</form>
+</div>
+</section>
+<!-- =========================================================
+    FOOTER
+    ========================================================= -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-company">
+<a class="footer-logo" href="index.html">
+<img alt="LEVI Pharmaceutical Plc" class="footer-logo-img" src="assets/images/LEVI-logo-launch.png">
+</img></a>
+<p>An Ethiopian pharmaceutical company specializing in the importation and distribution of pharmaceuticals, medical equipment, laboratory products, and healthcare supplies.</p>
+<div class="footer-social">
+<a aria-label="Facebook" href="https://www.facebook.com/" rel="noopener" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/" rel="noopener" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+<a aria-label="Telegram" href="https://t.me/" rel="noopener" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/" rel="noopener" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="about.html">About Us</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="news.html">News &amp; Events</a></li>
+<li><a href="careers.html">Careers</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Products</h4>
+<ul>
+<li><a href="products.html#medicines">Medicines</a></li>
+<li><a href="products.html#medical-equipment">Medical Equipment</a></li>
+<li><a href="products.html#laboratory">Laboratory Products</a></li>
+<li><a href="products.html#diagnostics">Diagnostics</a></li>
+<li><a href="products.html#consumables">Medical Consumables</a></li>
+</ul>
+</div>
+<div class="footer-column footer-contact">
+<h4>Contact</h4>
+<p><i class="fa-solid fa-location-dot"></i> Bole Sub City, Addis Ababa, Ethiopia</p>
+<p><i class="fa-solid fa-phone"></i> +251 11 123 4567</p>
+<p><i class="fa-solid fa-envelope"></i> info@levipharma.com</p>
+<p><i class="fa-solid fa-clock"></i> Mon – Fri: 8:30 AM – 5:30 PM</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span id="currentYear"></span> LEVI Pharmaceutical Plc. All Rights Reserved.</p>
+<div>
+<a href="contact.html#privacy-note">Privacy Policy</a>
+<a href="contact.html#terms-note">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- =========================================================
+    FLOATING WHATSAPP
+    ========================================================= -->
+<a aria-label="Chat on WhatsApp" class="whatsapp-btn" href="https://wa.me/251911234567" rel="noopener" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+<span>Chat with us</span>
+</a>
+<!-- =========================================================
+    BACK TO TOP
+    ========================================================= -->
+<button aria-label="Back to top" class="back-to-top" id="backToTop">
+<i class="fa-solid fa-arrow-up"></i>
+</button>
+<!-- =========================================================
+    JAVASCRIPT
+    ========================================================= -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>
