@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (loader && !loader.querySelector(".loader-brand")) {
         const brand = document.createElement("img");
         brand.className = "loader-brand";
-        brand.src = "assets/images/LEVI logo.svg";
+        brand.src = "images/LEVI logo.svg";
         brand.alt = "LEVI Pharmaceutical";
         loader.prepend(brand);
     }
